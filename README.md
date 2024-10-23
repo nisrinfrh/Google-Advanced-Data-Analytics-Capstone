@@ -10,6 +10,20 @@ Waze leadership has asked your data team to develop a machine learning model to 
 Scenario: 
 
 You are the newest member of Waze’s data team. Your team is about to begin their user churn project. The first step is to create a project proposal. The proposal will clearly define the overall goal of the project, and identify key tasks, milestones, and stakeholders. 
+
+**1/**  Project background
+Waze’s data team is in the earliest stages of the churn project. The following tasks are needed before the team can begin the data analysis process:
+
+Build a dataframe for the churn dataset
+
+Examine data type of each column
+
+Gather descriptive statistics
+
+Your assignment
+
+Your assignment
+You will build a dataframe for the churn data. After the dataframe is complete, you will organize the data for the process of exploratory data analysis, and update the team on your progress and insights.
 **Project background**
 Waze’s data team is working on the churn project. The following tasks are needed at this stage of the project:
 
@@ -21,4 +35,9 @@ Finish checking model assumptions
 
 Evaluate the model
 
-Interpret model results and summarize findings for cross-departmental stakeholders within Waze
+Interpret model results and summarize findings for cross-departmental stakeholde
+**preaper data**
+**Identify data types and compile summary information**
+Begin by exploring our dataset and consider reviewing the Data Dictionary.
+
+Prepare by reading in the data, viewing the data dictionary, and exploring the dataset to identify key variables for the stakeholder.

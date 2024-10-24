@@ -180,6 +180,12 @@ Nonetheless, it might be worthwile to contact the data team at Waze to get more 
 
 Confirm the maximum number of days for each variable—driving_days and activity_days.
 
+![Screenshot (223)](https://github.com/user-attachments/assets/dbcf7c73-8e2b-46b4-84fa-317cec506a99)
+
+
+![Screenshot (224)](https://github.com/user-attachments/assets/b0111a12-1359-4aef-89cb-8dc542d686ce)
+
+
 
 
 

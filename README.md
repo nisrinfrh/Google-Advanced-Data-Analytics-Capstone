@@ -70,8 +70,13 @@ The drives information follows a distribution similar to the sessions variable. 
 
 A model estimate of the total number of sessions since a user has onboarded
 
+![Screenshot (206)](https://github.com/user-attachments/assets/a5d7bd82-e00f-4875-98e0-d27c5c61cf60)
 
-The total_sessions is a right-skewed distribution. The median total number of sessions is 159.6. This is interesting information because, if the median number of sessions in the last month was 56 and the median total sessions was ~160, then it seems that a large proportion of a user's (estimated) total drives might have taken place in the last month. This is something you can examine more closely later.
+
+The total_sessions is a right-skewed distribution. The median total number of sessions is 159.6. 
+This is interesting information because, if the median number of sessions in the last month was 56 and the 
+Median total sessions was ~160, then it seems that a large proportion of a user's (estimated) total drives
+Might have taken place in the last month. This is something you can examine more closely later.
 
 n_days_after_onboarding
 The number of days since a user signed up for the app

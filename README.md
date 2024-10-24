@@ -148,16 +148,15 @@ The type of device a user starts a session with
 
 This is a categorical variable, so you do not plot a box plot for it. A good plot for a binary categorical variable is a pie chart.
 
+![Screenshot (219)](https://github.com/user-attachments/assets/805cced7-359c-44e9-9fe6-ce2a333ad83d)
+
+label
+Binary target variable (“retained” vs “churned”) for if a user has churned anytime during the course of the month
+
+This is also a categorical variable, and as such would not be plotted as a box plot. Plot a pie chart instead.
 
 
-
-
-
-
-
-
-
-
+![Screenshot (220)](https://github.com/user-attachments/assets/914857aa-4679-4540-b9ad-08ad26966a70)
 
 
 driving_days vs. activity_days

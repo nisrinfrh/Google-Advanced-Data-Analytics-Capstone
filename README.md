@@ -150,13 +150,19 @@ This is a categorical variable, so you do not plot a box plot for it. A good plo
 
 ![Screenshot (219)](https://github.com/user-attachments/assets/805cced7-359c-44e9-9fe6-ce2a333ad83d)
 
+There are nearly twice as many iPhone users as Android users represented in this data.
+
+
 label
+
 Binary target variable (“retained” vs “churned”) for if a user has churned anytime during the course of the month
 
 This is also a categorical variable, and as such would not be plotted as a box plot. Plot a pie chart instead.
 
 
 ![Screenshot (220)](https://github.com/user-attachments/assets/914857aa-4679-4540-b9ad-08ad26966a70)
+
+Less than 18% of the users churned
 
 
 driving_days vs. activity_days
@@ -165,6 +171,16 @@ Because both driving_days and activity_days represent counts of days over a mont
 Plot a histogram that, for each day, has a bar representing the counts of driving_days and user_days.
 
 ![Screenshot (222)](https://github.com/user-attachments/assets/729e9ea3-f43f-42da-9207-445041024879)
+
+As observed previously, this might seem counterintuitive. After all, why are there fewer people who didn't use the app at all during the month and more people who didn't drive at all during the month?
+
+On the other hand, it could just be illustrative of the fact that, while these variables are related to each other, they're not the same. People probably just open the app more than they use the app to drive—perhaps to check drive times or route information, to update settings, or even just by mistake.
+
+Nonetheless, it might be worthwile to contact the data team at Waze to get more information about this, especially because it seems that the number of days in the month is not the same between variables.
+
+Confirm the maximum number of days for each variable—driving_days and activity_days.
+
+
 
 
 

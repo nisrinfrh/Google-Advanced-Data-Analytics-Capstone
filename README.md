@@ -115,6 +115,10 @@ The duration_minutes_drives variable has a heavily skewed right tail. Half of th
 
 But some users clocked over 250 hours over the month.
 
+driving_days
+Number of days the user drives (at least 1 km) during the month
+
+
 
 
 

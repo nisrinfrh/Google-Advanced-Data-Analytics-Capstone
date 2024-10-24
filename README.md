@@ -192,8 +192,29 @@ One other way to check the validity of these variables is to plot a simple scatt
 Notice that there is a theoretical limit. If you use the app to drive, then by definition it must count as a day-use as well. In other words, you cannot have more drive-days than activity-days. None of the samples in this data violate this rule, which is good.
 
 Retention by device
+
 Plot a histogram that has four bars—one for each device-label combination—to show how many iPhone users were retained/churned and how many Android users were retained/churned.
 
+![Screenshot (225)](https://github.com/user-attachments/assets/32bffbb5-0d59-40eb-8074-6df38aab3bb0)
+
+The proportion of churned users to retained users is consistent between device types.
+
+Retention by kilometers driven per driving day
+In the previous course, you discovered that the median distance driven per driving day last month for users who churned was 697.54 km, versus 289.55 km for people who did not churn. Examine this further.
+
+Create a new column in df called km_per_driving_day, which represents the mean distance driven per driving day for each user.
+
+Call the describe() method on the new column.
+
+![Screenshot (226)](https://github.com/user-attachments/assets/868e5442-ccf4-4c4a-bab5-b327cca989ac)
+
+What do you notice? The mean value is infinity, the standard deviation is NaN, and the max value is infinity. Why do you think this is?
+
+This is the result of there being values of zero in the driving_days column. Pandas imputes a value of infinity in the corresponding rows of the new column because division by zero is undefined.
+
+Convert these values from infinity to zero. You can use np.inf to refer to a value of infinity.
+
+Call describe() on the km_per_driving_day column to verify that it worked.
 
 
 

@@ -1,31 +1,17 @@
-Background: 
+## Introduction: 
 
 Waze’s free navigation app makes it easier for drivers around the world to get to where they want to go. Waze’s community of map editors, beta testers, translators, partners, and users helps make each drive better and safer. 
 
-Project goal:  
+## Project goal:  
+I will develop a machine learning model to predict user churn. Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app. This project focuses on monthly user churn. An accurate model will help prevent churn, improve user retention, and grow Waze’s business
 
-Waze leadership has asked your data team to develop a machine learning model to predict user churn. Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app. This project focuses on monthly user churn. An accurate model will help prevent churn, improve user retention, and grow Waze’s business.
-
-
-Scenario: 
-
-You are the newest member of Waze’s data team. Your team is about to begin their user churn project. The first step is to create a project proposal. The proposal will clearly define the overall goal of the project, and identify key tasks, milestones, and stakeholders. 
-
-**1/**  Project background
-Waze’s data team is in the earliest stages of the churn project. The following tasks are needed before the team can begin the data analysis process:
+The following tasks are needed before I begin the data analysis process:
 
 Build a dataframe for the churn dataset
 
 Examine data type of each column
 
 Gather descriptive statistics
-
-Your assignment
-
-Your assignment
-You will build a dataframe for the churn data. After the dataframe is complete, you will organize the data for the process of exploratory data analysis, and update the team on your progress and insights.
-**Project background**
-Waze’s data team is working on the churn project. The following tasks are needed at this stage of the project:
 
 Determine the correct modeling approach
 
@@ -35,63 +21,27 @@ Finish checking model assumptions
 
 Evaluate the model
 
-Interpret model results and summarize findings for cross-departmental stakeholde
-**PACE: Plan**
-Consider the questions in your PACE Strategy Document and those below to craft your response:
-
-Task 1. Understand the situation
-How can you best prepare to understand and organize the provided driver data?
-Begin by exploring your dataset and consider reviewing the Data Dictionary.
-
-Answer:
+## Prepare the Data
 
 Prepare by reading in the data, viewing the data dictionary, and exploring the dataset to identify key variables for the stakeholder.
 
- **PACE: Analyze**
-Consider the questions in your PACE Strategy Document to reflect on the Analyze stage.
+Start by importing the packages that i will need to load and explore the dataset
 
-Task 2a. Imports and data loading
-Start by importing the packages that you will need to load and explore the dataset. Make sure to use the following import statements:
-
-import pandas as pd
-
-import numpy as np
-        **Summary information**
+**Summary information**
 View and inspect summary information about the dataframe by coding the following:
 
-df.head(10)
-df.info()
- Consider the following questions:
-
-When reviewing the df.head() output, are there any variables that have missing values?
-
-When reviewing the df.info() output, what are the data types? How many rows and columns do you have?
 
 Does the dataset have any missing values?
 **PICTURE1**
 The variables label and device are of type object; total_sessions, driven_km_drives, and duration_minutes_drives are of type float64; the rest of the variables are of type int64. There are 14,999 rows and 13 columns.
 
 The dataset has 700 missing values in the label column.
-**Null values and summary statistics**
-Compare the summary statistics of the 700 rows that are missing labels with summary statistics of the rows that are not missing any values.
 
-Question: Is there a discernible difference between the two populations?
-PICTURE1   [ICTURE2
-Comparing summary statistics of the observations with missing retention labels with those that aren't missing any values reveals nothing remarkable. The means and standard deviations are fairly consistent between the two groups.
-**Null values - device counts**
-Next, check the two populations with respect to the device variable.
+## Visulaization
+Begin by examining the spread and distribution of important variables using box plots and histograms.
+**sessions**
+The number of occurrences of a user opening the app during the month
 
-Question: How many iPhone users had null values and how many Android users had null values?
-PIC
-Of the 700 rows with null values, 447 were iPhone users and 253 were Android users.
-Now, of the rows with null values, calculate the percentage with each device—Android and iPhone. You can do this directly with the value_counts() function.
-
-# Calculate % of iPhone nulls and Android nulls
-null_df['device'].value_counts(normalize=True)
-iPhone     0.638571
-Android    0.361429
-Name: device, dtype: float64
-How does this compare to the device ratio in the full dataset?
 
 # Calculate % of iPhone users and Android users in full dataset
 df['device'].value_counts(normalize=True)
@@ -100,8 +50,6 @@ Android    0.355157
 Name: device, dtype: float64
 The percentage of missing values by each device is consistent with their representation in the data overall.
 
-There is nothing to suggest a non-random cause of the missing data.
-Examine the counts and percentages of users who churned vs. those who were retained. How many of each group are represented in the data?
 
 # Calculate counts of churned vs. retained
 print(df['label'].value_counts())
@@ -214,3 +162,5 @@ Generally, users who churned drove farther and longer in fewer days than retaine
 
 Was there an appreciable difference in churn rate between iPhone users vs. Android users?
 No. The churn rate for both iPhone and Android users was within one percentage point of each other. There is nothing suggestive of churn being correlated with device.
+## EDA ANALYSIS
+**ID can be dropped from the analysis since we are not interested in identifying a particular user. 

@@ -56,6 +56,12 @@ An occurrence of driving at least 1 km during the month
 
 ![Screenshot (203)](https://github.com/user-attachments/assets/7d516d9d-19e1-4642-9e39-fc5c1a03f85c)
 
+drived histogram
+
+![Screenshot (205)](https://github.com/user-attachments/assets/97774a4e-0c0d-4d14-8fb3-efd21ac0155e)
+
+The drives information follows a distribution similar to the sessions variable. It is right-skewed, approximately log-normal, with a median of 48. However, some drivers had over 400 drives in the last month.
+
 
 
 # Calculate % of iPhone users and Android users in full dataset

@@ -160,8 +160,12 @@ This is a categorical variable, so you do not plot a box plot for it. A good plo
 
 
 
+driving_days vs. activity_days
+Because both driving_days and activity_days represent counts of days over a month and they're also closely related, you can plot them together on a single histogram. This will help to better understand how they relate to each other without having to scroll back and forth comparing histograms in two different places.
 
+Plot a histogram that, for each day, has a bar representing the counts of driving_days and user_days.
 
+![image](https://github.com/user-attachments/assets/8b2ad91a-fbca-4079-be74-741d75c009f9)
 
 
 

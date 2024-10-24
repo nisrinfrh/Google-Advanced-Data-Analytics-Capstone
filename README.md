@@ -182,8 +182,17 @@ Confirm the maximum number of days for each variable—driving_days and activity
 
 ![Screenshot (223)](https://github.com/user-attachments/assets/dbcf7c73-8e2b-46b4-84fa-317cec506a99)
 
+It's true. Although it's possible that not a single user drove all 31 days of the month, it's highly unlikely, considering there are 15,000 people represented in the dataset.
+
+One other way to check the validity of these variables is to plot a simple scatter plot with the x-axis representing one variable and the y-axis representing the other.
+
 
 ![Screenshot (224)](https://github.com/user-attachments/assets/b0111a12-1359-4aef-89cb-8dc542d686ce)
+
+Notice that there is a theoretical limit. If you use the app to drive, then by definition it must count as a day-use as well. In other words, you cannot have more drive-days than activity-days. None of the samples in this data violate this rule, which is good.
+
+Retention by device
+Plot a histogram that has four bars—one for each device-label combination—to show how many iPhone users were retained/churned and how many Android users were retained/churned.
 
 
 

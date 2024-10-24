@@ -78,8 +78,20 @@ This is interesting information because, if the median number of sessions in the
 Median total sessions was ~160, then it seems that a large proportion of a user's (estimated) total drives
 Might have taken place in the last month. This is something you can examine more closely later.
 
+![Screenshot (207)](https://github.com/user-attachments/assets/c4f4d4f7-92ad-418b-a1d8-9f8c629f4887)
+
 n_days_after_onboarding
 The number of days since a user signed up for the app
+
+
+
+
+
+
+
+
+
+
 
 # Calculate % of iPhone users and Android users in full dataset
 df['device'].value_counts(normalize=True)

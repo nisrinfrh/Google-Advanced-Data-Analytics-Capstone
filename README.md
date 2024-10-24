@@ -91,6 +91,21 @@ Hstogram n_days_after_onboarding
 
 driven_km_drives
 Total kilometers driven during the month
+![Screenshot (211)](https://github.com/user-attachments/assets/9d660c0f-1625-4fc7-a950-75d9098f4a11)
+
+
+
+
+![Screenshot (212)](https://github.com/user-attachments/assets/1620f4d5-de59-4ddc-9f33-c0e564d57e4e)
+
+The number of drives driven in the last month per user is a right-skewed distribution with half the users driving under 3,495 kilometers. 
+As you discovered in the analysis from the previous course, the users in this dataset drive a lot. 
+The longest distance driven in the month was over half the circumferene of the earth.
+
+duration_minutes_drives
+Total duration driven in minutes during the month
+
+
 
 
 

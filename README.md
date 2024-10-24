@@ -42,7 +42,7 @@ Begin by examining the spread and distribution of important variables using box 
 **sessions**
 The number of occurrences of a user opening the app during the month
 
-https://github.com/nisrinfrh/Google-Advanced-Data-Analytics-Capstone/issues/1#issue-2611395542
+![Screenshoot(201)]https://github.com/nisrinfrh/Google-Advanced-Data-Analytics-Capstone/issues/1#issue-2611395542
 
 # Calculate % of iPhone users and Android users in full dataset
 df['device'].value_counts(normalize=True)

@@ -83,6 +83,9 @@ Might have taken place in the last month. This is something you can examine more
 n_days_after_onboarding
 The number of days since a user signed up for the app
 
+![Screenshot (208)](https://github.com/user-attachments/assets/69668cc9-6723-40fe-9d22-d2aa0d877f7c)
+
+
 
 
 

@@ -119,14 +119,16 @@ But some users clocked over 250 hours over the month.
 activity_days
 Number of days the user opens the app during the month
 
+![Screenshot (217)](https://github.com/user-attachments/assets/6d053b56-6dfc-4d04-b081-43474c437c6d)
+
+
+![Screenshot (218)](https://github.com/user-attachments/assets/98c1c3f3-3b7d-4ced-a0c9-4232c5893173)
+
+
 
 Within the last month, users opened the app a median of 16 times. The box plot reveals a centered distribution. The histogram shows a nearly uniform distribution of ~500 people opening the app on each count of days. However, there are ~250 people who didn't open the app at all and ~250 people who opened the app every day of the month.
 
 This distribution is noteworthy because it does not mirror the sessions distribution, which you might think would be closely correlated with activity_days.
-
-
-
-
 
 
 driving_days
@@ -142,6 +144,9 @@ The number of days users drove each month is almost uniform, and it largely corr
 However, there were almost twice as many users (~1,000 vs. ~550) who did not drive at all during the month. This might seem counterintuitive when considered together with the information from activity_days. That variable had ~500 users opening the app on each of most of the day counts, but there were only ~250 users who did not open the app at all during the month and ~250 users who opened the app every day. Flag this for further investigation later.
 
 device
+The type of device a user starts a session with
+
+This is a categorical variable, so you do not plot a box plot for it. A good plot for a binary categorical variable is a pie chart.
 
 
 

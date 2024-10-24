@@ -39,12 +39,22 @@ The dataset has 700 missing values in the label column.
 
 ## Visulaization
 Begin by examining the spread and distribution of important variables using box plots and histograms.
+
 **sessions**
-The number of occurrences of a user opening the app during the month
+
+**The number of occurrences of a user opening the app during the month**
 
 ![Screenshot (201)](https://github.com/user-attachments/assets/7b5c0538-299a-4ce2-a67c-954dea8ba116)
 
+The sessions variable is a right-skewed distribution with half of the observations having 56 or fewer sessions. However,
+
+as indicated by the boxplot, some users have more than 700.
+
 ![Screenshot (202)](https://github.com/user-attachments/assets/c1fe15e4-ba41-4248-bb2a-eb2321e57416)
+
+An occurrence of driving at least 1 km during the month
+
+
 
 # Calculate % of iPhone users and Android users in full dataset
 df['device'].value_counts(normalize=True)

@@ -80,10 +80,20 @@ Might have taken place in the last month. This is something you can examine more
 
 ![Screenshot (207)](https://github.com/user-attachments/assets/c4f4d4f7-92ad-418b-a1d8-9f8c629f4887)
 
-n_days_after_onboarding
+
 The number of days since a user signed up for the app
 
 ![Screenshot (208)](https://github.com/user-attachments/assets/69668cc9-6723-40fe-9d22-d2aa0d877f7c)
+
+Hstogram n_days_after_onboarding
+
+![Screenshot (210)](https://github.com/user-attachments/assets/41a1d55f-a92b-46f9-96c2-163a63983f5d)
+
+driven_km_drives
+Total kilometers driven during the month
+
+
+
 
 
 

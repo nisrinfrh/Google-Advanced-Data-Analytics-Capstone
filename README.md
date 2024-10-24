@@ -105,6 +105,17 @@ The longest distance driven in the month was over half the circumferene of the e
 duration_minutes_drives
 Total duration driven in minutes during the month
 
+![Screenshot (213)](https://github.com/user-attachments/assets/b993f4b0-6af7-4586-a599-dfef1e407f38)
+
+
+![Screenshot (214)](https://github.com/user-attachments/assets/28d3b754-ec5a-43e3-baef-86b01ec07ac3)
+
+
+The duration_minutes_drives variable has a heavily skewed right tail. Half of the users drove less than ~1,478 minutes (~25 hours),
+
+But some users clocked over 250 hours over the month.
+
+
 
 
 

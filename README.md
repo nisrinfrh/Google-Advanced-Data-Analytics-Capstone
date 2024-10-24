@@ -165,7 +165,7 @@ Because both driving_days and activity_days represent counts of days over a mont
 
 Plot a histogram that, for each day, has a bar representing the counts of driving_days and user_days.
 
-![image](https://github.com/user-attachments/assets/8b2ad91a-fbca-4079-be74-741d75c009f9)
+![Screenshot (222)](https://github.com/user-attachments/assets/729e9ea3-f43f-42da-9207-445041024879)
 
 
 

@@ -54,6 +54,8 @@ as indicated by the boxplot, some users have more than 700.
 
 An occurrence of driving at least 1 km during the month
 
+![Screenshot (203)](https://github.com/user-attachments/assets/7d516d9d-19e1-4642-9e39-fc5c1a03f85c)
+
 
 
 # Calculate % of iPhone users and Android users in full dataset

@@ -118,6 +118,16 @@ But some users clocked over 250 hours over the month.
 activity_days
 Number of days the user opens the app during the month
 
+![Screenshot (217)](https://github.com/user-attachments/assets/df3e9c80-8cf8-488d-8c2f-a8f62c3ce9a3)
+
+
+![Screenshot (218)](https://github.com/user-attachments/assets/47a827fd-648b-477b-aa0b-c2c80ef12e46)
+
+Within the last month, users opened the app a median of 16 times. The box plot reveals a centered distribution. The histogram shows a nearly uniform distribution of ~500 people opening the app on each count of days. However, there are ~250 people who didn't open the app at all and ~250 people who opened the app every day of the month.
+
+This distribution is noteworthy because it does not mirror the sessions distribution, which you might think would be closely correlated with activity_days.
+
+
 
 
 

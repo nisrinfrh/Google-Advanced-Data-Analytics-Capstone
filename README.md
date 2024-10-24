@@ -115,9 +115,26 @@ The duration_minutes_drives variable has a heavily skewed right tail. Half of th
 
 But some users clocked over 250 hours over the month.
 
+activity_days
+Number of days the user opens the app during the month
+
+
+
+
+
 driving_days
 Number of days the user drives (at least 1 km) during the month
 
+![Screenshot (215)](https://github.com/user-attachments/assets/0e077523-ad33-47e8-bcb6-a54a5e2fd361)
+
+
+![Screenshot (216)](https://github.com/user-attachments/assets/fb6566be-1bdc-40c9-82e9-d9889bdb00e3)
+
+The number of days users drove each month is almost uniform, and it largely correlates with the number of days they opened the app that month, except the driving_days distribution tails off on the right.
+
+However, there were almost twice as many users (~1,000 vs. ~550) who did not drive at all during the month. This might seem counterintuitive when considered together with the information from activity_days. That variable had ~500 users opening the app on each of most of the day counts, but there were only ~250 users who did not open the app at all during the month and ~250 users who opened the app every day. Flag this for further investigation later.
+
+device
 
 
 

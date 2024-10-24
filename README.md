@@ -37,7 +37,13 @@ The variables label and device are of type object; total_sessions, driven_km_dri
 
 The dataset has 700 missing values in the label column.
 
-## Visulaization
+## PROSSES THE DATA
+
+SInce we are interested in user churn, the label column is essential. Besides label, variables that tie to user behaviors will be the most applicable. All variables tie to user behavior except ID.
+ID can be dropped from the analysis since we are not interested in identifying a particular user. ID does not provide meaningful information about the churn 
+
+## Visulaization.
+
 Begin by examining the spread and distribution of important variables using box plots and histograms.
 
 **sessions**
@@ -62,7 +68,13 @@ drived histogram
 
 The drives information follows a distribution similar to the sessions variable. It is right-skewed, approximately log-normal, with a median of 48. However, some drivers had over 400 drives in the last month.
 
+A model estimate of the total number of sessions since a user has onboarded
 
+
+The total_sessions is a right-skewed distribution. The median total number of sessions is 159.6. This is interesting information because, if the median number of sessions in the last month was 56 and the median total sessions was ~160, then it seems that a large proportion of a user's (estimated) total drives might have taken place in the last month. This is something you can examine more closely later.
+
+n_days_after_onboarding
+The number of days since a user signed up for the app
 
 # Calculate % of iPhone users and Android users in full dataset
 df['device'].value_counts(normalize=True)

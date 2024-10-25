@@ -23,6 +23,9 @@ Evaluate the model
 
 ## Prepare the Data
 
+Imports and data loading
+Import packages and libraries needed to compute descriptive statistics and conduct a hypothesis test.
+
 Prepare by reading in the data, viewing the data dictionary, and exploring the dataset to identify key variables for the stakeholder.
 
 Start by importing the packages that i will need to load and explore the dataset
@@ -222,6 +225,37 @@ Analysis revealed that the overall churn rate is \~17%, and that this rate is co
 Perhaps you feel that the more deeply you explore the data, the more questions arise. This is not uncommon! In this case, it's worth asking the Waze data team why so many users used the app so much in just the last month.
 
 Also, EDA has revealed that users who drive very long distances on their driving days are _more_ likely to churn, but users who drive more often are _less_ likely to churn. The reason for this discrepancy is an opportunity for further investigation, and it would be something else to ask the Waze data team about.
+
+ ## Statistical Methods to Analyze and Interpret our Data.
+  In particular, We wants to know if there is a statistically significant difference in mean amount of rides between iPhone® users and Android™ users.
+To do that we conduct a two-sample hypothesis test (t-test) to analyze the difference in the mean amount of rides between tpw group
+
+**Research question**:
+
+"Do drivers who open the application using an iPhone have the same number of drives on average as drivers who use Android devices?".
+
+In order to perform this analysis, imust turn each label into an integer. The following code assigns a 1 for an iPhone user and a 2 for Android. It assigns this label back to the variable device_type.
+
+You are interested in the relationship between device type and the number of drives. One approach is to look at the average number of drives for each device type. Calculate these averages.
+
+device_type
+1    67.859078
+2    66.231838
+Name: drives, dtype: float64
+
+Based on the averages shown, it appears that drivers who use an iPhone device n have a higher number of drives on average. However, this difference might arise from random sampling, 
+
+rather than being a true difference in the number of drives. To assess whether the difference is statistically significant,i can conduct a hypothesis test.
+
+**Hypotheses:**
+
+H0
+ : There is no difference in average number of drives between drivers who use iPhone devices and drivers who use Androids.
+
+HA
+ : There is a difference in average number of drives between drivers who use iPhone devices and drivers who use Androids.
+
+
 ******************************************************************************************************************************************************************
 I have learned ....
 

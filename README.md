@@ -215,129 +215,55 @@ This is the result of there being values of zero in the driving_days column. Pan
 Convert these values from infinity to zero. You can use np.inf to refer to a value of infinity.
 
 Call describe() on the km_per_driving_day column to verify that it worked.
+#### **Conclusion**
 
+Analysis revealed that the overall churn rate is \~17%, and that this rate is consistent between iPhone users and Android users.
 
+Perhaps you feel that the more deeply you explore the data, the more questions arise. This is not uncommon! In this case, it's worth asking the Waze data team why so many users used the app so much in just the last month.
 
+Also, EDA has revealed that users who drive very long distances on their driving days are _more_ likely to churn, but users who drive more often are _less_ likely to churn. The reason for this discrepancy is an opportunity for further investigation, and it would be something else to ask the Waze data team about.
+******************************************************************************************************************************************************************
+I have learned ....
 
+* There is missing data in the user churn label, so we might need  further data processing before further analysis.
+* There are many outlying observations for drives, so we might consider a variable transformation to stabilize the variation.
+* The number of drives and the number of sessions are both strongly correlated, so they might provide redundant information when we incorporate both in a model.
+* On average, retained users have fewer drives than churned users.
 
-# Calculate % of iPhone users and Android users in full dataset
-df['device'].value_counts(normalize=True)
-iPhone     0.644843
-Android    0.355157
-Name: device, dtype: float64
-The percentage of missing values by each device is consistent with their representation in the data overall.
+My other questions are ....
 
+* How does the missingness in the user churn label arise?
+* Who are the users with an extremely large number of drives? Are they ridesharing drivers or commercial drivers?
+* Why do retained users have fewer drives than churned users? Is it because churned users have a longer history of using the Waze app?
+* What is the user demographic for retained users and churned users?
 
-# Calculate counts of churned vs. retained
-print(df['label'].value_counts())
-print()
-print(df['label'].value_counts(normalize=True))
-retained    11763
-churned      2536
-Name: label, dtype: int64
+My client would likely want to know ...
 
-retained    0.822645
-churned     0.177355
-Name: label, dtype: float64
-This dataset contains 82% retained users and 18% churned users.
+* What are the key variables associated with user churn?
+* Can we implement policies to reduce user churn?
 
-Next, compare the medians of each variable for churned and retained users. The reason for calculating the median and not the mean is that you don't want outliers to unduly affect the portrayal of a typical user. Notice, for example, that the maximum value in the driven_km_drives column is 21,183 km. That's more than half the circumference of the earth!
+* What types of distributions did you notice in the variables? What did this tell you about the data?
+Nearly all the variables were either very right-skewed or uniformly distributed. For the right-skewed distributions, this means that most users had values in the lower end of the range for that variable. For the uniform distributions, this means that users were generally equally likely to have values anywhere within the range for that variable.
 
-# Calculate median values of all columns for churned and retained users
-df.groupby('label').median(numeric_only=True)
-ID	sessions	drives	total_sessions	n_days_after_onboarding	total_navigations_fav1	total_navigations_fav2	driven_km_drives	duration_minutes_drives	activity_days	driving_days
-label											
-churned	7477.5	59.0	50.0	164.339042	1321.0	84.5	11.0	3652.655666	1607.183785	8.0	6.0
-retained	7509.0	56.0	47.0	157.586756	1843.0	68.0	9.0	3464.684614	1458.046141	17.0	14.0
-This offers an interesting snapshot of the two groups, churned vs. retained:
-
-Users who churned averaged ~3 more drives in the last month than retained users, but retained users used the app on over twice as many days as churned users in the same time period.
-
-The median churned user drove ~200 more kilometers and 2.5 more hours during the last month than the median retained user.
-
-It seems that churned users had more drives in fewer days, and their trips were farther and longer in duration. Perhaps this is suggestive of a user profile. Continue exploring!
-Calculate the median kilometers per drive in the last month for both retained and churned users.
-
-Begin by dividing the driven_km_drives column by the drives column. Then, group the results by churned/retained and calculate the median km/drive of each group.
-
-# Add a column to df called `km_per_drive`
-df['km_per_drive'] = df['driven_km_drives'] / df['drives']
-​
-# Group by `label`, calculate the median, and isolate for km per drive
-median_km_per_drive = df.groupby('label').median(numeric_only=True)[['km_per_drive']]
-median_km_per_drive
-km_per_drive
-label	
-churned	74.109416
-retained	75.014702
-The median retained user drove about one more kilometer per drive than the median churned user. How many kilometers per driving day was this?
-
-To calculate this statistic, repeat the steps above using driving_days instead of drives.
-# Add a column to df called `km_per_driving_day`
-df['km_per_driving_day'] = df['driven_km_drives'] / df['driving_days']
-
-# Group by `label`, calculate the median, and isolate for km per driving day
-median_km_per_driving_day = df.groupby('label').median(numeric_only=True)[['km_per_driving_day']]
-median_km_per_driving_day
-	km_per_driving_day
-label	
-churned	697.541999
-retained	289.549333
-Now calculate the median number of drives per driving day for each group.
-
-# Add a column to df called `drives_per_driving_day`
-df['drives_per_driving_day'] = df['drives'] / df['driving_days']
-​
-# Group by `label`, calculate the median, and isolate for drives per driving day
-median_drives_per_driving_day = df.groupby('label').median(numeric_only=True)[['drives_per_driving_day']]
-median_drives_per_driving_day
-The median user who churned drove 698 kilometers each day they drove last month, which is ~240% the per-drive-day distance of retained users. The median churned user had a similarly disproporionate number of drives per drive day compared to retained users.
-
-It is clear from these figures that, regardless of whether a user churned or not, the users represented in this data are serious drivers! It would probably be safe to assume that this data does not represent typical drivers at large. Perhaps the data—and in particular the sample of churned users—contains a high proportion of long-haul truckers.
-
-In consideration of how much these users drive, it would be worthwhile to recommend to Waze that they gather more data on these super-drivers. It's possible that the reason for their driving so much is also the reason why the Waze app does not meet their specific set of needs, which may differ from the needs of a more typical driver, such as a commuter.
-
-Finally, examine whether there is an imbalance in how many users churned by device type.
-
-Begin by getting the overall counts of each device type for each group, churned and retained.
- For each label, calculate the number of Android users and iPhone users
-df.groupby(['label', 'device']).size()
-label     device 
-churned   Android     891
-          iPhone     1645
-retained  Android    4183
-          iPhone     7580
-dtype: int64
-Now, within each group, churned and retained, calculate what percent was Android and what percent was iPhone.
-
-# For each label, calculate the percentage of Android users and iPhone users
-df.groupby('label')['device'].value_counts(normalize=True)
-label     device 
-churned   iPhone     0.648659
-          Android    0.351341
-retained  iPhone     0.644393
-          Android    0.355607
-Name: device, dtype: float64
-The ratio of iPhone users and Android users is consistent between the churned group and the retained group, and those ratios are both consistent with the ratio found in the overall dataset.
-PACE: Execute
-Questions:
-
-Did the data contain any missing values? How many, and which variables were affected? Was there a pattern to the missing data?
-The dataset has 700 missing values in the label column. There was no obvious pattern to the missing values.
-
-What is a benefit of using the median value of a sample instead of the mean?
-Mean is subject to the influence of outliers, while the median represents the middle value of the distribution regardless of any outlying values.
+Was there anything that led you to believe the data was erroneous or problematic in any way?
+Most of the data was not problematic, and there was no indication that any single variable was completely wrong. However, several variables had highly improbable or perhaps even impossible outlying values, such as driven_km_drives. Some of the monthly variables also might be problematic, such as activity_days and driving_days, because one has a max value of 31 while the other has a max value of 30, indicating that data collection might not have occurred in the same month for both of these variables.
 
 Did your investigation give rise to further questions that you would like to explore or ask the Waze team about?
-Yes. For example, the median user who churned drove 698 kilometers each day they drove last month, which is about 240% the per-drive-day distance of retained users. It would be helpful to know how this data was collected and if it represents a non-random sample of users.
+Yes. I'd want to ask the Waze data team to confirm that the monthly variables were collected during the same month, given the fact that some have max values of 30 days while others have 31 days. I'd also want to learn why so many long-time users suddenly started using the app so much in just the last month. Was there anything that changed in the last month that might prompt this kind of behavior?
 
-What percentage of the users in the dataset were Android users and what percentage were iPhone users?
-Android users comprised approximately 36% of the sample, while iPhone users made up about 64%
+What percentage of users churned and what percentage were retained?
+Less than 18% of users churned, and ~82% were retained.
 
-What were some distinguishing characteristics of users who churned vs. users who were retained?
-Generally, users who churned drove farther and longer in fewer days than retained users. They also used the app about half as many times as retained users over the same period.
+What factors correlated with user churn? How?
+Distance driven per driving day had a positive correlation with user churn. The farther a user drove on each driving day, the more likely they were to churn. On the other hand, number of driving days had a negative correlation with churn. Users who drove more days of the last month were less likely to churn.
 
-Was there an appreciable difference in churn rate between iPhone users vs. Android users?
-No. The churn rate for both iPhone and Android users was within one percentage point of each other. There is nothing suggestive of churn being correlated with device.
-## EDA ANALYSIS
-**ID can be dropped from the analysis since we are not interested in identifying a particular user. 
+Did newer uses have greater representation in this dataset than users with longer tenure? How do you know?
+No. Users of all tenures from brand new to ~10 years were relatively evenly represented in the data. This is borne out by the histogram for n_days_after_onboarding, which reveals a uniform distribution for this variable.
+
+
+
+
+
+
+
+

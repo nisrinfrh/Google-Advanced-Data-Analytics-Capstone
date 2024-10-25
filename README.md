@@ -226,8 +226,10 @@ Perhaps you feel that the more deeply you explore the data, the more questions a
 
 Also, EDA has revealed that users who drive very long distances on their driving days are _more_ likely to churn, but users who drive more often are _less_ likely to churn. The reason for this discrepancy is an opportunity for further investigation, and it would be something else to ask the Waze data team about.
 
+*****************************************************************************************************************************************************************************************
  ## Statistical Methods to Analyze and Interpret our Data.
-  In particular, We wants to know if there is a statistically significant difference in mean amount of rides between iPhone® users and Android™ users.
+ 
+In particular, We wants to know if there is a statistically significant difference in mean amount of rides between iPhone® users and Android™ users.
 To do that we conduct a two-sample hypothesis test (t-test) to analyze the difference in the mean amount of rides between tpw group
 
 **Research question**:
@@ -254,6 +256,14 @@ H0
 
 HA
  : There is a difference in average number of drives between drivers who use iPhone devices and drivers who use Androids.
+ 
+![Screenshot (227)](https://github.com/user-attachments/assets/801fec8f-7120-445c-acdd-3d502253bfdd)
+
+*Since the p-value is larger than the chosen significance level (5%), you fail to reject the null hypothesis. You conclude that there is **not** a statistically significant difference* *in the average number of drives between drivers who use iPhones and drivers who use Androids*
+
+business insight(s)  drawn from the result of your hypothesis test
+
+The key business insight is that drivers who use iPhone devices on average have a similar number of drives as those who use Androids.
 
 
 ******************************************************************************************************************************************************************

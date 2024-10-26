@@ -267,6 +267,99 @@ The key business insight is that drivers who use iPhone devices on average have 
 
 
 ******************************************************************************************************************************************************************
+
+
+## Regression modeling
+
+In this section of projecti will build a binomial logistic regression model.
+
+The goal is to build a binomial logistic regression model and evaluate the model's performance.
+
+Outliers and extreme data values can significantly impact logistic regression models. After visualizing data, make a plan for addressing outliers by dropping rows, substituting extreme data with average data, and/or removing data values greater than 3 standard deviations.
+
+EDA activities also include identifying missing data to help the analyst make decisions on their exclusion or inclusion by substituting values with dataset means, medians, and other similar methods.
+
+Additionally, it can be useful to create variables by multiplying variables together or calculating the ratio between two variables. For example, in this dataset you can create a drives_sessions_ratio variable by dividing drives by sessions.
+Use the drop() method to remove the ID column since you don't need this information for your analysis.
+
+df = df.drop('ID', axis=1)
+
+**FIRST**
+Now, check the class balance of the dependent (target) variable, label.
+
+df['label'].value_counts(normalize=True)
+retained    0.822645
+churned     0.177355
+Name: label, dtype: float64
+Call describe() on the data.
+AFTRE DESCRIBE DATA WE CONCLODE 
+Are there any variables that could potentially have outliers just by assessing at the quartile values, standard deviation, and max values?
+
+Yes, the following columns all seem to have outliers:
+
+sessions
+drives
+total_sessions
+total_navigations_fav1
+total_navigations_fav2
+driven_km_drives
+duration_minutes_drives
+All of these columns have max values that are multiple standard deviations above the 75th percentile. This could indicate outliers in these variables.
+Create a new column in df called km_per_driving_day, which represents the mean distance driven per driving day for each user.
+
+Call the describe() method on the new column.
+
+professional_driver
+Create a new, binary feature called professional_driver that is a 1 for users who had 60 or more drives and drove on 15+ days in the last month.
+
+Note: The objective is to create a new feature that separates professional drivers from other drivers. In this scenario, domain knowledge and intuition are used to determine these deciding thresholds, but ultimately they are arbitrary.
+
+To create this column, use the np.where() function. This function accepts as arguments:
+
+A condition
+What to return when the condition is true
+What to return when the condition is false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*******************************************************************************************************************************************************************************************
+
 I have learned ....
 
 * There is missing data in the user churn label, so we might need  further data processing before further analysis.

@@ -491,6 +491,17 @@ Note 1: It is important to do a train test to obtain accurate predictions. You a
 
 Note 2: Because the target class is imbalanced (82% retained vs. 18% churned), you want to make sure that you don't get an unlucky split that over- or under-represents the frequency of the minority class. Set the function's stratify parameter to y to ensure that the minority class appears in both train and test sets in the same proportion that it does in the overall dataset.
 
+![Screenshot (247)](https://github.com/user-attachments/assets/82deb099-6e42-481e-aea7-e3d0db254569)
+
+Use scikit-learn to instantiate a logistic regression model. Add the argument penalty = None.
+
+It is important to add penalty = 'none' since your predictors are unscaled.
+
+Refer to scikit-learn's logistic regression documentation for more information.
+
+Fit the model on X_train and y_train.
+
+
 
 
 

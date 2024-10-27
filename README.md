@@ -59,8 +59,25 @@ The dataset has 700 missing values in the label column.
 
 Use the drop() method to remove the ID column since we don't need this information forour analysis.
 
+![Screenshot (232)](https://github.com/user-attachments/assets/054d94ec-46ed-4331-8aff-42aa594c3e55)
 
 Now, check the class balance of the dependent (target) variable, label.
+
+![Screenshot (233)](https://github.com/user-attachments/assets/3236ffd4-bcd0-40d5-9a71-784383ea39df)
+
+
+Are there any variables that could potentially have outliers just by assessing at the quartile values, standard deviation, and max values?
+
+Yes, the following columns all seem to have outliers:
+
+sessions
+drives
+total_sessions
+total_navigations_fav1
+total_navigations_fav2
+driven_km_drives
+duration_minutes_drives
+All of these columns have max values that are multiple standard deviations above the 75th percentile. This could indicate outliers in these variables.
 
 **PICTURE1**
 The variables label and device are of type object; total_sessions, driven_km_drives, and duration_minutes_drives are of type float64; the rest of the variables are of type int64. There are 14,999 rows and 13 columns.

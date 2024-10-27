@@ -69,15 +69,30 @@ Now, check the class balance of the dependent (target) variable, label.
 The following columns all seem to have outliers assessing at the quartile values, standard deviation, and max values:
 
 sessions
+
 drives
+
 total_sessions
+
 total_navigations_fav1
+
 total_navigations_fav2
+
 driven_km_drives
+
 duration_minutes_drives
+
 All of these columns have max values that are multiple standard deviations above the 75th percentile. This could indicate outliers in these variables.
 
+Create a new, binary feature called professional_driver that is a 1 for users who had 60 or more drives and drove on 15+ days in the last month.
 
+Note: The objective is to create a new feature that separates professional drivers from other drivers. In this scenario, domain knowledge and intuition are used to determine these deciding thresholds, but ultimately they are arbitrary.
+
+To create this column, use the np.where() function. This function accepts as arguments:
+
+A condition
+What to return when the condition is true
+What to return when the condition is false
 
 
 ## PROSSES THE DATA
@@ -102,6 +117,9 @@ Note that some values are infinite. This is the result of there being values of 
 Convert these values from infinity to zero. We can use np.inf to refer to a value of infinity.
 
 Call describe() on the km_per_driving_day column to verify that it worked.
+
+![Screenshot (236)](https://github.com/user-attachments/assets/7b2db6e9-81dd-423c-bb4b-2ddaa9047800)
+
 
 ## Visulaization.
 

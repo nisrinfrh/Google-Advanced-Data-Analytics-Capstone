@@ -394,6 +394,18 @@ driven_km_drives
 duration_minutes_drives
 For this analysis, impute the outlying values for these columns. Calculate the 95th percentile of each column and change to this value any value in the column that exceeds it.
 
+![Screenshot (240)](https://github.com/user-attachments/assets/bc14523a-b18f-4542-b111-e3080be36840)
+
+**Encode categorical variables
+Change the data type of the label column to be binary. This change is needed to train a logistic regression model.
+
+Assign a 0 for all retained users.
+
+Assign a 1 for all churned users.
+
+Save this variable as label2 as to not overwrite the original label variable.
+
+
 
 
 Additionally, it can be useful to create variables by multiplying variables together or calculating the ratio between two variables. For example, in this dataset you can create a

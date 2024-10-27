@@ -396,6 +396,12 @@ For this analysis, impute the outlying values for these columns. Calculate the 9
 
 ![Screenshot (240)](https://github.com/user-attachments/assets/bc14523a-b18f-4542-b111-e3080be36840)
 
+Additionally, it can be useful to create variables by multiplying variables together or calculating the ratio between two variables. For example, in this dataset you can create a
+
+drives_sessions_ratio variable by dividing drives by sessions.
+
+
+
 **Encode categorical variables
 Change the data type of the label column to be binary. This change is needed to train a logistic regression model.
 
@@ -405,12 +411,32 @@ Assign a 1 for all churned users.
 
 Save this variable as label2 as to not overwrite the original label variable.
 
+![Screenshot (241)](https://github.com/user-attachments/assets/05e1bb7c-f823-43c2-bed4-35db1b82f076)
+
+## Determine whether assumptions have been met
+The following are the assumptions for logistic regression:
+
+1- Independent observations (This refers to how the data was collected.)
+
+2- No extreme outliers
+
+3- Little to no multicollinearity among X predictors
+
+4- Linear relationship between X and the logit of y
+
+For the first assumption, you can assume that observations are independent for this project.
+
+The second assumption has already been addressed.
+
+The last assumption will be verified after modeling.
+
+**Collinearity**
+
+Check the correlation among predictor variables. First, generate a correlation matrix.
+
+Now, plot a correlation heatmap
 
 
-
-Additionally, it can be useful to create variables by multiplying variables together or calculating the ratio between two variables. For example, in this dataset you can create a
-
-drives_sessions_ratio variable by dividing drives by sessions.
 
 
 

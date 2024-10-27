@@ -368,54 +368,23 @@ The key business insight is that drivers who use iPhone devices on average have 
 
 ## Regression modeling
 
-In this section of projecti will build a binomial logistic regression model.
+After analysis and deriving variables with close relationships, it is time to begin constructing the model.
 
-The goal is to build a binomial logistic regression model and evaluate the model's performance.
+In this section of projecti will build a binomial logistic regression model and evaluate the model's performance.
 
-Outliers and extreme data values can significantly impact logistic regression models. After visualizing data, make a plan for addressing outliers by dropping rows, substituting extreme data with average data, and/or removing data values greater than 3 standard deviations.
+Outliers and extreme data values can significantly impact logistic regression models.So   we will farther more prossesig data to handel missing and Outliers 
 
-EDA activities also include identifying missing data to help the analyst make decisions on their exclusion or inclusion by substituting values with dataset means, medians, and other similar methods.
+Because you know from previous EDA that there is no evidence of a non-random cause of the 700 missing values in the label column, and because these observations comprise less than 5% of the data, use the dropna() method to drop the rows that are missing this data.
 
-Additionally, it can be useful to create variables by multiplying variables together or calculating the ratio between two variables. For example, in this dataset you can create a drives_sessions_ratio variable by dividing drives by sessions.
-Use the drop() method to remove the ID column since you don't need this information for your analysis.
 
-df = df.drop('ID', axis=1)
 
-**FIRST**
-Now, check the class balance of the dependent (target) variable, label.
+Additionally, it can be useful to create variables by multiplying variables together or calculating the ratio between two variables. For example, in this dataset you can create a
 
-df['label'].value_counts(normalize=True)
-retained    0.822645
-churned     0.177355
-Name: label, dtype: float64
-Call describe() on the data.
-AFTRE DESCRIBE DATA WE CONCLODE 
-Are there any variables that could potentially have outliers just by assessing at the quartile values, standard deviation, and max values?
+drives_sessions_ratio variable by dividing drives by sessions.
 
-Yes, the following columns all seem to have outliers:
 
-sessions
-drives
-total_sessions
-total_navigations_fav1
-total_navigations_fav2
-driven_km_drives
-duration_minutes_drives
-All of these columns have max values that are multiple standard deviations above the 75th percentile. This could indicate outliers in these variables.
-Create a new column in df called km_per_driving_day, which represents the mean distance driven per driving day for each user.
 
-Call the describe() method on the new column.
 
-professional_driver
-Create a new, binary feature called professional_driver that is a 1 for users who had 60 or more drives and drove on 15+ days in the last month.
-
-Note: The objective is to create a new feature that separates professional drivers from other drivers. In this scenario, domain knowledge and intuition are used to determine these deciding thresholds, but ultimately they are arbitrary.
-
-To create this column, use the np.where() function. This function accepts as arguments:
-
-A condition
-What to return when the condition is true
-What to return when the condition is false
 
 
 

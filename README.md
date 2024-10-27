@@ -501,6 +501,13 @@ Refer to scikit-learn's logistic regression documentation for more information.
 
 Fit the model on X_train and y_train.
 
+![Screenshot (248)](https://github.com/user-attachments/assets/238b8aa6-61cb-442a-8edd-d72aabf74493)
+
+Call the .coef_ attribute on the model to get the coefficients of each variable. The coefficients are in order of how the variables are listed in the dataset. Remember that the coefficients represent the change in the log odds of the target variable for every one unit increase in X.
+
+If you want, create a series whose index is the column names and whose values are the coefficients in model.coef_.
+
+
 
 
 

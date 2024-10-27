@@ -460,6 +460,26 @@ Create a new, binary column called device2 that encodes user devices as follows:
 Android -> 0
 iPhone -> 1
 
+![Screenshot (244)](https://github.com/user-attachments/assets/12b2d1b4-dd19-42c0-8cf3-978632be6f7a)
+
+ ## Model building
+Assign predictor variables and target
+To build your model you need to determine what X variables you want to include in your model to predict your target—label2.
+
+Drop the following variables and assign the results to X:
+
+label (this is the target)
+label2 (this is the target)
+device (this is the non-binary-encoded categorical variable)
+sessions (this had high multicollinearity)
+driving_days (this had high multicollinearity)
+Note: Notice that sessions and driving_days were selected to be dropped, rather than drives and activity_days. The reason for this is that the features that were kept for modeling had slightly stronger correlations with the target variable than the features that were dropped.
+
+
+
+Now, isolate the dependent (target) variable. Assign it to a variable called y.
+
+
 
 
 

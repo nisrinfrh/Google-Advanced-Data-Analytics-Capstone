@@ -47,18 +47,25 @@ from sklearn.linear_model import LogisticRegression
 ![Screenshot (228)](https://github.com/user-attachments/assets/c3c78703-026f-4c8b-ba42-e18874e734a0)
 
  ## Exploratory data analysis (EDA)##
+
+ Start with head()
  
+![Screenshot (230)](https://github.com/user-attachments/assets/43d53fac-69ba-4fbf-a156-e8e2da886675)
+
+ shape and info().
+
+![Screenshot (229)](https://github.com/user-attachments/assets/34f0ffb5-d5cd-4d66-86ee-cd682316a591)
+The dataset has 700 missing values in the label column.
+
+Use the drop() method to remove the ID column since we don't need this information forour analysis.
 
 
-**Summary information**
-View and inspect summary information about the dataframe by coding the following:
+Now, check the class balance of the dependent (target) variable, label.
 
-
-Does the dataset have any missing values?
 **PICTURE1**
 The variables label and device are of type object; total_sessions, driven_km_drives, and duration_minutes_drives are of type float64; the rest of the variables are of type int64. There are 14,999 rows and 13 columns.
 
-The dataset has 700 missing values in the label column.
+
 
 ## PROSSES THE DATA
 

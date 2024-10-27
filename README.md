@@ -376,6 +376,24 @@ Outliers and extreme data values can significantly impact logistic regression mo
 
 Because you know from previous EDA that there is no evidence of a non-random cause of the 700 missing values in the label column, and because these observations comprise less than 5% of the data, use the dropna() method to drop the rows that are missing this data.
 
+![Screenshot (239)](https://github.com/user-attachments/assets/c551ddc6-c92f-4433-b0c2-a6982bc021d6)
+
+**Impute outliers**
+You rarely want to drop outliers, and generally will not do so unless there is a clear reason for it (e.g., typographic errors).
+
+At times outliers can be changed to the median, mean, 95th percentile, etc.
+
+Previously, you determined that seven of the variables had clear signs of containing outliers:
+
+sessions
+drives
+total_sessions
+total_navigations_fav1
+total_navigations_fav2
+driven_km_drives
+duration_minutes_drives
+For this analysis, impute the outlying values for these columns. Calculate the 95th percentile of each column and change to this value any value in the column that exceeds it.
+
 
 
 Additionally, it can be useful to create variables by multiplying variables together or calculating the ratio between two variables. For example, in this dataset you can create a

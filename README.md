@@ -20,15 +20,31 @@ Build a regression model
 Finish checking model assumptions
 
 Evaluate the model
+ **First Step**
+ ## Exploratory data analysis (EDA)##
 
 ## Prepare the Data
 
 Imports and data loading
 Import packages and libraries needed to compute descriptive statistics and conduct a hypothesis test.
 
-Prepare by reading in the data, viewing the data dictionary, and exploring the dataset to identify key variables for the stakeholder.
+**HERE MAKE SCREEN SHOOT FOR ALL IMPORTANT PACKAGE**  
+# Packages for numerics + dataframes
+import pandas as pd
+import numpy as np
 
-Start by importing the packages that i will need to load and explore the dataset
+# Packages for visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Packages for Logistic Regression & Confusion Matrix
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, accuracy_score, precision_score, \
+recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
+from sklearn.linear_model import LogisticRegression
+**Import the data**
+
 
 **Summary information**
 View and inspect summary information about the dataframe by coding the following:

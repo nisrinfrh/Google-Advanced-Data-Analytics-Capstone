@@ -136,6 +136,7 @@ Check the count of professional drivers and non-professionals
 Within each class (professional and non-professional) calculate the churn rate
 
 
+
 ## Visulaization.
 
 Begin by examining the spread and distribution of important variables using box plots and histograms.

@@ -511,6 +511,8 @@ If you want, create a series whose index is the column names and whose values ar
 
 Call the model's intercept_ attribute to get the intercept of the model.
 
+![Screenshot (250)](https://github.com/user-attachments/assets/55d0d60c-b48b-46dd-8add-b95922c5876f)
+
 
 
 

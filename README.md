@@ -21,8 +21,7 @@ Finish checking model assumptions
 
 Evaluate the model
  **First Step**
- ## Exploratory data analysis (EDA)##
-
+ 
 ## Prepare the Data
 
 Imports and data loading
@@ -44,6 +43,10 @@ from sklearn.metrics import classification_report, accuracy_score, precision_sco
 recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
 from sklearn.linear_model import LogisticRegression
 **Import the data**
+
+![Screenshot (228)](https://github.com/user-attachments/assets/c3c78703-026f-4c8b-ba42-e18874e734a0)
+
+ ## Exploratory data analysis (EDA)##
 
 
 **Summary information**

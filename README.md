@@ -135,6 +135,11 @@ Check the count of professional drivers and non-professionals
 
 Within each class (professional and non-professional) calculate the churn rate
 
+![Screenshot (238)](https://github.com/user-attachments/assets/f3a9da2d-6a2a-4c94-a846-198876711a69)
+
+The churn rate for professional drivers is 7.6%, while the churn rate for non-professionals is 19.9%. This seems like it could add predictive signal to the model.
+
+
 
 
 ## Visulaization.

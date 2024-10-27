@@ -475,9 +475,21 @@ sessions (this had high multicollinearity)
 driving_days (this had high multicollinearity)
 Note: Notice that sessions and driving_days were selected to be dropped, rather than drives and activity_days. The reason for this is that the features that were kept for modeling had slightly stronger correlations with the target variable than the features that were dropped.
 
+![Screenshot (245)](https://github.com/user-attachments/assets/7ff4085a-8412-4dad-b6be-e4c046272d32)
+
+
 
 
 Now, isolate the dependent (target) variable. Assign it to a variable called y.
+
+![Screenshot (246)](https://github.com/user-attachments/assets/f0b7ac49-f22e-45bd-974d-108a3ad21b1b)
+
+Split the data
+Use scikit-learn's train_test_split() function to perform a train/test split on your data using the X and y variables you assigned above.
+
+Note 1: It is important to do a train test to obtain accurate predictions. You always want to fit your model on your training set and evaluate your model on your test set to avoid data leakage.
+
+Note 2: Because the target class is imbalanced (82% retained vs. 18% churned), you want to make sure that you don't get an unlucky split that over- or under-represents the frequency of the minority class. Set the function's stratify parameter to y to ensure that the minority class appears in both train and test sets in the same proportion that it does in the overall dataset.
 
 
 

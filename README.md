@@ -88,6 +88,13 @@ All of these columns have max values that are multiple standard deviations above
 SInce we are interested in user churn, the label column is essential. Besides label, variables that tie to user behaviors will be the most applicable. All variables tie to user behavior except ID.
 ID can be dropped from the analysis since we are not interested in identifying a particular user. ID does not provide meaningful information about the churn 
 
+Create features that may be of interest to the stakeholder and/or that are needed to address the business scenario/problem.
+ou know from earlier EDA that churn rate correlates with distance driven per driving day in the last month. It might be helpful to engineer a feature that captures this information.
+
+Create a new column in df called km_per_driving_day, which represents the mean distance driven per driving day for each user.
+
+Call the describe() method on the new column.
+
 ## Visulaization.
 
 Begin by examining the spread and distribution of important variables using box plots and histograms.

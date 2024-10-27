@@ -58,9 +58,6 @@ from sklearn.linear_model import LogisticRegression
 
 The dataset has 700 missing values in the label column.
 
-Use the drop() method to remove the ID column since we don't need this information forour analysis.
-
-![Screenshot (232)](https://github.com/user-attachments/assets/054d94ec-46ed-4331-8aff-42aa594c3e55)
 
 Now, check the class balance of the dependent (target) variable, label.
 
@@ -88,12 +85,23 @@ All of these columns have max values that are multiple standard deviations above
 SInce we are interested in user churn, the label column is essential. Besides label, variables that tie to user behaviors will be the most applicable. All variables tie to user behavior except ID.
 ID can be dropped from the analysis since we are not interested in identifying a particular user. ID does not provide meaningful information about the churn 
 
-Create features that may be of interest to the stakeholder and/or that are needed to address the business scenario/problem.
-ou know from earlier EDA that churn rate correlates with distance driven per driving day in the last month. It might be helpful to engineer a feature that captures this information.
+Use the drop() method to remove the ID column .
 
-Create a new column in df called km_per_driving_day, which represents the mean distance driven per driving day for each user.
+![Screenshot (232)](https://github.com/user-attachments/assets/054d94ec-46ed-4331-8aff-42aa594c3e55)
 
-Call the describe() method on the new column.
+
+
+You know from earlier EDA that churn rate correlates with distance driven per driving day in the last month. It might be helpful to engineer a feature that captures this information.
+
+Create a new column in df called km_per_driving_day, which represents the mean distance driven per driving day for each user..
+
+![Screenshot (235)](https://github.com/user-attachments/assets/46f93b4a-9519-467f-a447-8f0b3f97e53e)
+
+Note that some values are infinite. This is the result of there being values of zero in the driving_days column. Pandas imputes a value of infinity in the corresponding rows of the new column because division by zero is undefined.
+
+Convert these values from infinity to zero. We can use np.inf to refer to a value of infinity.
+
+Call describe() on the km_per_driving_day column to verify that it worked.
 
 ## Visulaization.
 

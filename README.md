@@ -47,6 +47,7 @@ from sklearn.linear_model import LogisticRegression
 ![Screenshot (228)](https://github.com/user-attachments/assets/c3c78703-026f-4c8b-ba42-e18874e734a0)
 
  ## Exploratory data analysis (EDA)##
+ 
 
 
 **Summary information**

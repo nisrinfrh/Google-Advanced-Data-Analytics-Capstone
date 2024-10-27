@@ -507,6 +507,12 @@ Call the .coef_ attribute on the model to get the coefficients of each variable.
 
 If you want, create a series whose index is the column names and whose values are the coefficients in model.coef_.
 
+![Screenshot (249)](https://github.com/user-attachments/assets/c42e6518-0c03-4ef9-8135-79f9eb372782)
+
+Call the model's intercept_ attribute to get the intercept of the model.
+
+
+
 
 
 

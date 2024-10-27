@@ -436,6 +436,30 @@ Check the correlation among predictor variables. First, generate a correlation m
 
 Now, plot a correlation heatmap
 
+![Screenshot (243)](https://github.com/user-attachments/assets/90ffff72-1584-4e98-b69a-8b26378833fb)
+
+If there are predictor variables that have a Pearson correlation coefficient value greater than the absolute value of 0.7, these variables are strongly multicollinear. Therefore, only one of these variables should be used in your model.From map  variables are multicollinear with each other
+
+**sessions and drives: 1.0**   
+
+**driving_days and activity_days: 0.95**
+
+*Note: 0.7 is an arbitrary threshold. Some industries may use 0.6, 0.8, etc.
+
+ Create dummies (if necessary)
+If you have selected device as an X variable, you will need to create dummy variables since this variable is categorical.
+
+In cases with many categorical variables, you can use pandas built-in pd.get_dummies(), or you can use scikit-learn's OneHotEncoder() function.
+
+Note: Variables with many categories should only be dummied if absolutely necessary. Each category will result in a coefficient for your model which can lead to overfitting.
+
+Because this dataset only has one remaining categorical feature (device), it's not necessary to use one of these special functions. You can just implement the transformation directly.
+
+Create a new, binary column called device2 that encodes user devices as follows:
+
+Android -> 0
+iPhone -> 1
+
 
 
 

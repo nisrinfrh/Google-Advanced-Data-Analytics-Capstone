@@ -55,6 +55,7 @@ from sklearn.linear_model import LogisticRegression
  shape and info().
 
 ![Screenshot (229)](https://github.com/user-attachments/assets/34f0ffb5-d5cd-4d66-86ee-cd682316a591)
+
 The dataset has 700 missing values in the label column.
 
 Use the drop() method to remove the ID column since we don't need this information forour analysis.

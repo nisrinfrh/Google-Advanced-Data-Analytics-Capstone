@@ -525,7 +525,11 @@ Create a dataframe called logit_data that is a copy of df.
 Create a new column called logit in the logit_data dataframe. The data in this column should represent the logit for each user.
 logit(p)=ln(p/1−p)
 
+![Screenshot (252)](https://github.com/user-attachments/assets/4a59a974-0079-4e0a-9667-fbf443a0a074)
 
+Plot a regplot where the x-axis represents an independent variable and the y-axis represents the log-odds of the predicted probabilities.
+
+ Here we show only activity_days.
 
 
 

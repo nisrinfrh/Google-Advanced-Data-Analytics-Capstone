@@ -555,6 +555,9 @@ Next, use the ConfusionMatrixDisplay() function to display the confusion matrix 
 
 You can use the confusion matrix to compute precision and recall manually. You can also use scikit-learn's classification_report() function to generate a table from y_test and y_preds
 
+![Screenshot (257)](https://github.com/user-attachments/assets/bc4f0636-c055-4e74-8b90-0702b8f0e9c5)
+
+: The model has mediocre precision and very low recall, which means that it makes a lot of false negative predictions and fails to capture users who will churn.
 
 
 
@@ -602,46 +605,24 @@ You can use the confusion matrix to compute precision and recall manually. You c
 
 
 
+******************************************************************************************************************************************************************************************
+What variable most influenced the model's prediction? How? Was this surprising?
+activity_days was by far the most important feature in the model. It had a negative correlation with user churn. This was not surprising, as this variable was very strongly correlated with driving_days, which was known from EDA to have a negative correlation with churn.
 
-*******************************************************************************************************************************************************************************************
+Were there any variables that you expected to be stronger predictors than they were?
+Yes. In previous EDA, user churn rate increased as the values in km_per_driving_day increased. The correlation heatmap here in this notebook revealed this variable to have the strongest positive correlation with churn of any of the predictor variables by a relatively large margin. In the model, it was the second-least-important variable.
 
-I have learned ....
+Why might a variable you thought to be important not be important in the model?
+In a multiple logistic regression model, features can interact with each other and these interactions can result in seemingly counterintuitive relationships. This is both a strength and a weakness of predictive models, as capturing these interactions typically makes a model more predictive while at the same time making the model more difficult to explain.
 
-* There is missing data in the user churn label, so we might need  further data processing before further analysis.
-* There are many outlying observations for drives, so we might consider a variable transformation to stabilize the variation.
-* The number of drives and the number of sessions are both strongly correlated, so they might provide redundant information when we incorporate both in a model.
-* On average, retained users have fewer drives than churned users.
+Would you recommend that Waze use this model? Why or why not?
+It depends. What would the model be used for? If it's used to drive consequential business decisions, then no. The model is not a strong enough predictor, as made clear by its poor recall score. However, if the model is only being used to guide further exploratory efforts, then it can have value.
 
-My other questions are ....
+What could you do to improve this model?
+New features could be engineered to try to generate better predictive signal, as they often do if you have domain knowledge. In the case of this model, one of the engineered features (professional_driver) was the third-most-predictive predictor. It could also be helpful to scale the predictor variables, and/or to reconstruct the model with different combinations of predictor variables to reduce noise from unpredictive features.
 
-* How does the missingness in the user churn label arise?
-* Who are the users with an extremely large number of drives? Are they ridesharing drivers or commercial drivers?
-* Why do retained users have fewer drives than churned users? Is it because churned users have a longer history of using the Waze app?
-* What is the user demographic for retained users and churned users?
-
-My client would likely want to know ...
-
-* What are the key variables associated with user churn?
-* Can we implement policies to reduce user churn?
-
-* What types of distributions did you notice in the variables? What did this tell you about the data?
-Nearly all the variables were either very right-skewed or uniformly distributed. For the right-skewed distributions, this means that most users had values in the lower end of the range for that variable. For the uniform distributions, this means that users were generally equally likely to have values anywhere within the range for that variable.
-
-Was there anything that led you to believe the data was erroneous or problematic in any way?
-Most of the data was not problematic, and there was no indication that any single variable was completely wrong. However, several variables had highly improbable or perhaps even impossible outlying values, such as driven_km_drives. Some of the monthly variables also might be problematic, such as activity_days and driving_days, because one has a max value of 31 while the other has a max value of 30, indicating that data collection might not have occurred in the same month for both of these variables.
-
-Did your investigation give rise to further questions that you would like to explore or ask the Waze team about?
-Yes. I'd want to ask the Waze data team to confirm that the monthly variables were collected during the same month, given the fact that some have max values of 30 days while others have 31 days. I'd also want to learn why so many long-time users suddenly started using the app so much in just the last month. Was there anything that changed in the last month that might prompt this kind of behavior?
-
-What percentage of users churned and what percentage were retained?
-Less than 18% of users churned, and ~82% were retained.
-
-What factors correlated with user churn? How?
-Distance driven per driving day had a positive correlation with user churn. The farther a user drove on each driving day, the more likely they were to churn. On the other hand, number of driving days had a negative correlation with churn. Users who drove more days of the last month were less likely to churn.
-
-Did newer uses have greater representation in this dataset than users with longer tenure? How do you know?
-No. Users of all tenures from brand new to ~10 years were relatively evenly represented in the data. This is borne out by the histogram for n_days_after_onboarding, which reveals a uniform distribution for this variable.
-
+What additional features would you like to have to help improve the model?
+It would be helpful to have drive-level information for each user (such as drive times, geographic locations, etc.). It would probably also be helpful to have more granular data to know how users interact with the app. For example, how often do they report or confirm road hazard alerts? Finally, it could be helpful to know the monthly count of unique starting and ending locations each driver inputs.
 
 
 

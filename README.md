@@ -531,6 +531,10 @@ Plot a regplot where the x-axis represents an independent variable and the y-axi
 
  Here we show only activity_days.
 
+ ![Screenshot (253)](https://github.com/user-attachments/assets/cae62de6-4be6-4efe-8cde-f28eed9950e3)
+
+Use the code block below to make predictions on the test data.
+
 
 
 

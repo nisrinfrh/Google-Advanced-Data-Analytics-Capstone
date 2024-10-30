@@ -535,6 +535,23 @@ Plot a regplot where the x-axis represents an independent variable and the y-axi
 
 Use the code block below to make predictions on the test data.
 
+![Screenshot (254)](https://github.com/user-attachments/assets/153148f2-a2b3-4df2-b582-3a3880413d81)
+
+Now, use the score() method on the model with X_test and y_test as its two arguments. The default score in scikit-learn is accuracy. What is the accuracy of your model?
+
+Consider: Is accuracy the best metric to use to evaluate this model?
+
+![Screenshot (255)](https://github.com/user-attachments/assets/249495e4-9c32-471e-a9f2-4656256f1159)
+
+## Show results with a confusion matrix
+
+Use the confusion_matrix function to obtain a confusion matrix. Use y_test and y_preds as arguments.
+
+cm = confusion_matrix(y_test, y_preds)
+
+Next, use the ConfusionMatrixDisplay() function to display the confusion matrix from the above cell, passing the confusion matrix you just created as its argument.
+
+
 
 
 

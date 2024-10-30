@@ -551,6 +551,11 @@ cm = confusion_matrix(y_test, y_preds)
 
 Next, use the ConfusionMatrixDisplay() function to display the confusion matrix from the above cell, passing the confusion matrix you just created as its argument.
 
+![Screenshot (256)](https://github.com/user-attachments/assets/ea2e3ae5-0ab9-4f1c-9b30-8c3524485dd9)
+
+You can use the confusion matrix to compute precision and recall manually. You can also use scikit-learn's classification_report() function to generate a table from y_test and y_preds
+
+
 
 
 

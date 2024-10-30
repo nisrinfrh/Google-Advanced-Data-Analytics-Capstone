@@ -513,6 +513,17 @@ Call the model's intercept_ attribute to get the intercept of the model.
 
 ![Screenshot (250)](https://github.com/user-attachments/assets/55d0d60c-b48b-46dd-8add-b95922c5876f)
 
+**Check final assumption**
+Verify the linear relationship between X and the estimated log odds (known as logits) by making a regplot.
+
+Call the model's predict_proba() method to generate the probability of response for each sample in the training data. (The training data is the argument to the method.) Assign the result to a variable called training_probabilities. This results in a 2-D array where each row represents a user in X_train. The first column is the probability of the user not churning, and the second column is the probability of the user churning.
+
+![Screenshot (251)](https://github.com/user-attachments/assets/7bb3c091-9242-4c44-905a-a21623d2603d)
+
+Create a dataframe called logit_data that is a copy of df.
+
+Create a new column called logit in the logit_data dataframe. The data in this column should represent the logit for each user.
+logit(p)=ln(p/1−p)
 
 
 

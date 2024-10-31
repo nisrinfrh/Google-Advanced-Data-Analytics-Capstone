@@ -51,23 +51,22 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
  **Packages for visualization**
 
-    *import matplotlib.pyplot as plt*
-    *import seaborn as sns*
+     import matplotlib.pyplot as plt
+     import seaborn as sns
 
 **Packages for Logistic Regression & Confusion Matrix**
 
-    *from sklearn.preprocessing import StandardScaler, OneHotEncoder*
-    *from sklearn.model_selection import train_test_split*
-    *from sklearn.metrics import classification_report, accuracy_score, precision_score*
-    *recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay*
-    *from sklearn.linear_model import LogisticRegression.*
+     from sklearn.preprocessing import StandardScaler, OneHotEncoder*
+     from sklearn.model_selection import train_test_split*
+     from sklearn.metrics import classification_report, accuracy_score, precision_score*
+     recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay*
+     from sklearn.linear_model import LogisticRegression.*
 
  **Imports and data loading**
 
 ![Screenshot (228)](https://github.com/user-attachments/assets/c3c78703-026f-4c8b-ba42-e18874e734a0)
 
  ## Exploratory data analysis (EDA)
-
  Start with head()
  
 ![Screenshot (230)](https://github.com/user-attachments/assets/43d53fac-69ba-4fbf-a156-e8e2da886675)
@@ -104,27 +103,14 @@ duration_minutes_drives
 
 All of these columns have max values that are multiple standard deviations above the 75th percentile. This could indicate outliers in these variables.
 
-Create a new, binary feature called professional_driver that is a 1 for users who had 60 or more drives and drove on 15+ days in the last month.
-
-Note: The objective is to create a new feature that separates professional drivers from other drivers. In this scenario, domain knowledge and intuition are used to determine these deciding thresholds, but ultimately they are arbitrary.
-
-To create this column, use the np.where() function. This function accepts as arguments:
-
-A condition
-What to return when the condition is true
-What to return when the condition is false
-
 
 ## PROSSES THE DATA
-
-SInce we are interested in user churn, the label column is essential. Besides label, variables that tie to user behaviors will be the most applicable. All variables tie to user behavior except ID.
+Since we are interested in user churn, the label column is essential. Besides label, variables that tie to user behaviors will be the most applicable. All variables tie to user behavior except ID.
 ID can be dropped from the analysis since we are not interested in identifying a particular user. ID does not provide meaningful information about the churn 
 
 Use the drop() method to remove the ID column .
 
 ![Screenshot (232)](https://github.com/user-attachments/assets/054d94ec-46ed-4331-8aff-42aa594c3e55)
-
-
 
 You know from earlier EDA that churn rate correlates with distance driven per driving day in the last month. It might be helpful to engineer a feature that captures this information.
 
@@ -160,10 +146,7 @@ Within each class (professional and non-professional) calculate the churn rate
 The churn rate for professional drivers is 7.6%, while the churn rate for non-professionals is 19.9%. This seems like it could add predictive signal to the model.
 
 
-
-
 ## Visulaization.
-
 Begin by examining the spread and distribution of important variables using box plots and histograms.
 
 **sessions**
@@ -251,7 +234,7 @@ Within the last month, users opened the app a median of 16 times. The box plot r
 This distribution is noteworthy because it does not mirror the sessions distribution, which you might think would be closely correlated with activity_days.
 
 
-driving_days
+**driving_days**
 Number of days the user drives (at least 1 km) during the month
 
 ![Screenshot (215)](https://github.com/user-attachments/assets/0e077523-ad33-47e8-bcb6-a54a5e2fd361)
@@ -263,7 +246,7 @@ The number of days users drove each month is almost uniform, and it largely corr
 
 However, there were almost twice as many users (~1,000 vs. ~550) who did not drive at all during the month. This might seem counterintuitive when considered together with the information from activity_days. That variable had ~500 users opening the app on each of most of the day counts, but there were only ~250 users who did not open the app at all during the month and ~250 users who opened the app every day. Flag this for further investigation later.
 
-device
+**device**
 The type of device a user starts a session with
 
 This is a categorical variable, so you do not plot a box plot for it. A good plot for a binary categorical variable is a pie chart.
@@ -273,7 +256,7 @@ This is a categorical variable, so you do not plot a box plot for it. A good plo
 There are nearly twice as many iPhone users as Android users represented in this data.
 
 
-label
+**label**
 
 Binary target variable (“retained” vs “churned”) for if a user has churned anytime during the course of the month
 
@@ -285,7 +268,8 @@ This is also a categorical variable, and as such would not be plotted as a box p
 Less than 18% of the users churned
 
 
-driving_days vs. activity_days
+**driving_days vs. activity_days**
+
 Because both driving_days and activity_days represent counts of days over a month and they're also closely related, you can plot them together on a single histogram. This will help to better understand how they relate to each other without having to scroll back and forth comparing histograms in two different places.
 
 Plot a histogram that, for each day, has a bar representing the counts of driving_days and user_days.
@@ -311,7 +295,7 @@ One other way to check the validity of these variables is to plot a simple scatt
 
 Notice that there is a theoretical limit. If you use the app to drive, then by definition it must count as a day-use as well. In other words, you cannot have more drive-days than activity-days. None of the samples in this data violate this rule, which is good.
 
-Retention by device
+**Retention by device**
 
 Plot a histogram that has four bars—one for each device-label combination—to show how many iPhone users were retained/churned and how many Android users were retained/churned.
 

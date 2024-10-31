@@ -18,25 +18,25 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
      * *When do users churn?*
 
-*Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app.*
+**Note** *Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app.*
 
 
 
-The following tasks are needed to complete the project:
+**The following tasks are needed to complete the project:
 
-1- Build a dataframe for the churn dataset
+**1- Build a dataframe for the churn dataset
 
-2- Examine data type of each column
+**2- Examine data type of each column
 
-3- Gather descriptive statistics
+**3- Gather descriptive statistics
 
-4- Determine the correct modeling approach
+**4- Determine the correct modeling approach
 
-5- Build a regression model
+**5- Build a regression model
 
-6- Finish checking model assumptions
+**6- Finish checking model assumptions
 
-7- Evaluate the model
+**7- Evaluate the model
 
 ## Build a dataframe for the churn dataset
  

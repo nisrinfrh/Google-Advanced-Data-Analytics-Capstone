@@ -1,11 +1,28 @@
 ## Introduction: 
 
-Waze’s free navigation app makes it easier for drivers around the world to get to where they want to go. Waze’s community of map editors, beta testers, translators, partners, and users helps make each drive better and safer. 
+Waze’s free navigation app makes it easier for drivers around the world to get to where they want to go. Waze’s community of map editors, beta testers, translators, partners, and users helps make each drive better and safer.Waze partners with cities, transportation authorities, broadcasters, businesses, and first responders to help as many people as possible travel more efficiently and safely. 
+
 
 ## Project goal:  
-I will develop a machine learning model to predict user churn. Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app. This project focuses on monthly user churn. An accurate model will help prevent churn, improve user retention, and grow Waze’s business
+ *This project is part of a larger effort at Waze to increase growth. Typically, high retention rates indicate satisfied users who repeatedly use the Waze app over time. 
 
-The following tasks are needed before I begin the data analysis process:
+ *Developing a churn prediction model will help prevent churn, improve user retention, and grow Waze’s business.
+
+ *An accurate model can also help identify specific factors that contribute to churn and answer questions such as: 
+
+    *Who are the users most likely to churn?
+ 
+   *Why do users churn? 
+
+   *When do users churn?
+  
+ *This project focuses on monthly user churn.  
+
+**Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app.
+
+
+
+The following tasks are needed before data analysis process:
 
 Build a dataframe for the churn dataset
 

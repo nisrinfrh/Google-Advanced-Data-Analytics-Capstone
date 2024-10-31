@@ -2,7 +2,7 @@
 Waze’s free navigation app makes it easier for drivers around the world to get to where they want to go. Waze’s community of map editors, beta testers, translators, partners, and users helps make each drive better and safer.Waze partners with cities, transportation authorities, broadcasters, businesses, and first responders to help as many people as possible travel more efficiently and safely. 
 
 
-## Project goal:  
+## Project background:  
 * This project is part of a larger effort at Waze to increase growth. Typically, high retention rates indicate satisfied users
  
 * who repeatedly use the Waze app over time. 
@@ -19,7 +19,7 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
   *When do users churn?*
 
-**Note :** *Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app.*
+**Note :-** *Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app.*
 
 **The following tasks are needed to complete the project:
 
@@ -42,12 +42,12 @@ Waze’s free navigation app makes it easier for drivers around the world to get
   
   Begin by exploring dataset and consider reviewing the Data Dictionary.
   
- **Import packages and libraries needed:**
+  Import packages and libraries needed
 
    **Packages for numerics + dataframes**
 
-    *import pandas as pd*
-    *import numpy as np*
+     import pandas as pd
+     import numpy as np
 
  **Packages for visualization**
 

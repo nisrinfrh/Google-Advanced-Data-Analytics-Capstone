@@ -3,25 +3,23 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
 
 ## Project goal:  
- * This project is part of a larger effort at Waze to increase growth. Typically, high retention rates indicate satisfied users
+* This project is part of a larger effort at Waze to increase growth. Typically, high retention rates indicate satisfied users
  
- * who repeatedly use the Waze app over time. 
+* who repeatedly use the Waze app over time. 
 
- * Developing a churn prediction model will help prevent churn, improve user retention, and grow Waze’s business.
+* Developing a churn prediction model will help prevent churn, improve user retention, and grow Waze’s business.
 
- *  This project focuses on monthly user churn.  
+*  This project focuses on monthly user churn.  
 
- * An accurate model can also help identify specific factors that contribute to churn and answer questions such as: 
+* An accurate model can also help identify specific factors that contribute to churn and answer questions such as: 
 
-     * *Who are the users most likely to churn?*
- 
-     * *Why do users churn?* 
+  *Who are the users most likely to churn?*
+  
+  *Why do users churn?* 
 
-     * *When do users churn?*
+  *When do users churn?*
 
-**Note** *Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app.*
-
-
+**Note :** *Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app.*
 
 **The following tasks are needed to complete the project:
 
@@ -39,9 +37,7 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
 **7- Evaluate the model  
 
-##  Prepare the Data
- 
- 
+##  Prepare the Data 
   Prepare by reading in the data, viewing the data dictionary, and exploring the dataset to identify key variables for the stakeholder.
   
   Begin by exploring dataset and consider reviewing the Data Dictionary.
@@ -55,21 +51,16 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
  **Packages for visualization**
 
-   *import matplotlib.pyplot as plt*
-
-   *import seaborn as sns*
+    *import matplotlib.pyplot as plt*
+    *import seaborn as sns*
 
 **Packages for Logistic Regression & Confusion Matrix**
 
-  *from sklearn.preprocessing import StandardScaler, OneHotEncoder*
-
-  *from sklearn.model_selection import train_test_split*
-
-  *from sklearn.metrics import classification_report, accuracy_score, precision_score*
-
-  *recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay*
-
-  *from sklearn.linear_model import LogisticRegression.*
+    *from sklearn.preprocessing import StandardScaler, OneHotEncoder*
+    *from sklearn.model_selection import train_test_split*
+    *from sklearn.metrics import classification_report, accuracy_score, precision_score*
+    *recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay*
+    *from sklearn.linear_model import LogisticRegression.*
 
  **Imports and data loading**
 

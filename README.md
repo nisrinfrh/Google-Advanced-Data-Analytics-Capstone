@@ -36,25 +36,24 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
 **6- Finish checking model assumptions
 
-**7- Evaluate the model
+**7- Evaluate the model  
 
-## Build a dataframe for the churn dataset
+## Build a dataframe for the churn dataset  Prepare the Data
  
-### Prepare the Data**
-
-  Import packages and libraries needed.
-  Imports and data loading
-  Begin by exploring dataset and consider reviewing the Data Dictionary.
+ 
+ 
   Prepare by reading in the data, viewing the data dictionary, and exploring the dataset to identify key variables for the stakeholder.
+  
+  Begin by exploring dataset and consider reviewing the Data Dictionary.
+  
+  Import packages and libraries needed:
 
-**1- Import packages and libraries needed.**
+ Packages for numerics + dataframes**
 
-**Packages for numerics + dataframes**
+ *import pandas as pd*
+ *import numpy as np*
 
-*import pandas as pd*
-*import numpy as np*
-
-**Packages for visualization**
+ **Packages for visualization**
 
 *import matplotlib.pyplot as plt*
 
@@ -63,10 +62,16 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 **Packages for Logistic Regression & Confusion Matrix**
 
 *from sklearn.preprocessing import StandardScaler, OneHotEncoder*
+
 *from sklearn.model_selection import train_test_split*
+
 *from sklearn.metrics import classification_report, accuracy_score, precision_score*
+
 *recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay*
+
 *from sklearn.linear_model import LogisticRegression.*
+
+ **Imports and data loading**
 
 ![Screenshot (228)](https://github.com/user-attachments/assets/c3c78703-026f-4c8b-ba42-e18874e734a0)
 

@@ -8,58 +8,61 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
  * Developing a churn prediction model will help prevent churn, improve user retention, and grow Waze’s business.
 
+ *  This project focuses on monthly user churn.  
+
  * An accurate model can also help identify specific factors that contribute to churn and answer questions such as: 
 
-     * Who are the users most likely to churn?
+     * *Who are the users most likely to churn?*
  
-     * Why do users churn? 
+     * *Why do users churn?* 
 
-     * When do users churn?
-  
- * This project focuses on monthly user churn.  
+     * *When do users churn?*
 
-** Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app.**
+**Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app.**
 
 
 
-The following tasks are needed before data analysis process:
+The following tasks are needed to complete the project:
 
-Build a dataframe for the churn dataset
+1- Build a dataframe for the churn dataset
 
-Examine data type of each column
+2- Examine data type of each column
 
-Gather descriptive statistics
+3- Gather descriptive statistics
 
-Determine the correct modeling approach
+4- Determine the correct modeling approach
 
-Build a regression model
+5- Build a regression model
 
-Finish checking model assumptions
+6- Finish checking model assumptions
 
-Evaluate the model
- **First Step**
+7- Evaluate the model
+**First Step** *Build a dataframe for the churn dataset*
  
-## Prepare the Data
+ #### Prepare the Data
 
-Imports and data loading
-Import packages and libraries needed to compute descriptive statistics and conduct a hypothesis test.
+  Import packages and libraries needed.
+  Imports and data loading
+  Begin by exploring dataset and consider reviewing the Data Dictionary.
+  Prepare by reading in the data, viewing the data dictionary, and exploring the dataset to identify key variables for the stakeholder.
 
-**HERE MAKE SCREEN SHOOT FOR ALL IMPORTANT PACKAGE**  
-# Packages for numerics + dataframes
-import pandas as pd
-import numpy as np
+**
 
-# Packages for visualization
-import matplotlib.pyplot as plt
-import seaborn as sns
+### 1- Import packages and libraries needed.  
+**Packages for numerics + dataframes**
+*import pandas as pd*
+*import numpy as np*
 
-# Packages for Logistic Regression & Confusion Matrix
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, accuracy_score, precision_score, \
-recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
-from sklearn.linear_model import LogisticRegression
-**Import the data**
+**Packages for visualization**
+*import matplotlib.pyplot as plt*
+*import seaborn as sns*
+
+**Packages for Logistic Regression & Confusion Matrix**
+*from sklearn.preprocessing import StandardScaler, OneHotEncoder*
+*from sklearn.model_selection import train_test_split*
+*from sklearn.metrics import classification_report, accuracy_score, precision_score*
+*recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay*
+*from sklearn.linear_model import LogisticRegression.*
 
 ![Screenshot (228)](https://github.com/user-attachments/assets/c3c78703-026f-4c8b-ba42-e18874e734a0)
 
